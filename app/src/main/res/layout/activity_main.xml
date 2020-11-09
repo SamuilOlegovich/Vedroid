@@ -6,68 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/Num1"
-        android:layout_width="322dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="14dp"
-        android:ems="10"
-        android:hint="First number"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/Num2"
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3A9F95"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Num2"
-        android:layout_width="321dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="7dp"
+        android:id="@+id/editTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="263dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
-        android:hint="Second number"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/Result"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Num1" />
-
-    <TextView
-        android:id="@+id/Result"
-        android:layout_width="325dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="47dp"
-        android:text="Result"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/sum"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Num2" />
-
-    <Button
-        android:id="@+id/sum"
-        android:layout_width="97dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="336dp"
-        android:background="#F43777"
-        android:onClick="onButtonClick"
-        android:text="+"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Result" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
