@@ -1,9 +1,11 @@
 package com.vedroid;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.widget.EditText;
@@ -75,11 +77,39 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
         alert.setOnClickListener(
+                // Окна с вопросом и действиями
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-
+                        // Строитель окон
+                        // указываем с какой именно страницей мы работаем
+                        AlertDialog.Builder aBuilder = new AlertDialog.Builder(MainActivity.this);
+                        // указываем нужное нам сообщение
+                        aBuilder.setMessage("Do you want to quit close the application?")
+                                // можем ли мы отменить это окно
+                                .setCancelable(false)
+                                // кнопка да закрывает программу
+                                // далее делаем событие которое отслеживает и реагирует на нажатие этой кнопки
+                                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                })
+                                // кнопка нет закрывает всплывающее окно
+                                // далее делаем событие которое отслеживает и реагирует на нажатие этой кнопки
+                                .setNegativeButton("NOT", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        // создание диалогового окна
+                        AlertDialog alert = aBuilder.create();
+                        // заголовок всплывающего окна
+                        alert.setTitle("Сlosing the program");
+                        // активируем показ окна
+                        alert.show();
                     }
                 }
         );
