@@ -15,7 +15,7 @@ import android.os.Bundle;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button  button, nextButton;
+    private Button  button, nextButton, alert;
     private EditText password;
 
 
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         // находим и назначаем поле
         password = (EditText) findViewById(R.id.editTextPassword);
         // находим и назначаем кнопку
+        alert = (Button) findViewById(R.id.alert);
         button = (Button) findViewById(R.id.button);
         nextButton = (Button) findViewById(R.id.nextButton);
 
@@ -70,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
                                 // как долго будет отобразаться всплывающее окно
                                 MainActivity.this, "We restart all", Toast.LENGTH_SHORT
                         ).show(); // открывает и сразу показывает всплывающее окно
+                    }
+                }
+        );
+        alert.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
                     }
                 }
         );
