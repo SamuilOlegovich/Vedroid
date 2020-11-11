@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
         // переход на другую страницу при нажатии на кнопку
-        alert.setOnClickListener(
+        nextPage.setOnClickListener(
                 // Окна с вопросом и действиями
                 new View.OnClickListener() {
                     @Override
