@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ import android.os.Bundle;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button  button, nextButton, alert;
+    private Button  button, nextButton, alert, nextPage;
     private EditText password;
     private TextView textShow;
     private RatingBar rating;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.nextButton);
         rating = (RatingBar) findViewById(R.id.ratingBar);
         textShow = (TextView) findViewById(R.id.rating);
+        nextPage = (Button) findViewById(R.id.nextPage);
         button = (Button) findViewById(R.id.button);
         alert = (Button) findViewById(R.id.alert);
 
@@ -124,6 +126,18 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                         textShow.setText(String.valueOf(rating));
+                    }
+                }
+        );
+        // переход на другую страницу при нажатии на кнопку
+        alert.setOnClickListener(
+                // Окна с вопросом и действиями
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // класс для перехода на другую страницу
+                        Intent intent = new Intent(".SecondActivity");
+                        startActivity(intent);
                     }
                 }
         );

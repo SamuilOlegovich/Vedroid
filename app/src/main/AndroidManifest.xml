@@ -9,6 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vedroid">
+        <activity
+            android:name=".SecondActivity"
+            android:label="@string/title_activity_second"
+            android:theme="@style/Theme.Vedroid.NoActionBar">
+<!--            вставляем сюда этот модуль  -->
+            <intent-filter>
+<!--                меняем на адрес новой страницы  -->
+                <action android:name=".SecondActivity" />
+<!--                меняем на DEFAULT  -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
