@@ -10,6 +10,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.widget.EditText;
 import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 import android.os.Bundle;
@@ -19,7 +21,8 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     private Button  button, nextButton, alert;
     private EditText password;
-
+    private TextView textShow;
+    private RatingBar rating;
 
 
     @Override
@@ -37,9 +40,11 @@ public class MainActivity extends AppCompatActivity {
         // находим и назначаем поле
         password = (EditText) findViewById(R.id.editTextPassword);
         // находим и назначаем кнопку
-        alert = (Button) findViewById(R.id.alert);
-        button = (Button) findViewById(R.id.button);
         nextButton = (Button) findViewById(R.id.nextButton);
+        rating = (RatingBar) findViewById(R.id.ratingBar);
+        textShow = (TextView) findViewById(R.id.rating);
+        button = (Button) findViewById(R.id.button);
+        alert = (Button) findViewById(R.id.alert);
 
         // добавляем обработчика событий енопке
         button.setOnClickListener(
@@ -110,6 +115,15 @@ public class MainActivity extends AppCompatActivity {
                         alert.setTitle("Сlosing the program");
                         // активируем показ окна
                         alert.show();
+                    }
+                }
+        );
+        // срабатывает при изменении рейтинга
+        rating.setOnRatingBarChangeListener(
+                new RatingBar.OnRatingBarChangeListener() {
+                    @Override
+                    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                        textShow.setText(String.valueOf(rating));
                     }
                 }
         );
